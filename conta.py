@@ -1,5 +1,5 @@
 
-class Conta:
+class Conta():
     def __int__(self, numero, titular, saldo, limite):
         self.__numero = numero
         self.__titular = titular
@@ -13,3 +13,7 @@ class Conta:
 
     def saca(self, valor):
         self.__saldo -= valor
+
+    def transfere(self, valor, destino):
+        self.saca(valor)
+        destino.deposita(valor)
